@@ -1,3 +1,10 @@
+/**
+ * Renders the main navigation bar for the application.
+ * The navbar includes links to the market and portfolio pages, as well as a button to connect the user's Ethereum wallet.
+ */
+// function Navbar() {
+//   // ...
+// }
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";

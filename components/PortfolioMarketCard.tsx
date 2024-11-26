@@ -1,3 +1,18 @@
+/**
+ * Renders a portfolio market card component with details about a market, including the title, user's position, total amounts, and time remaining.
+ *
+ * @param title - The title of the market.
+ * @param userYes - Whether the user has a "yes" position in the market.
+ * @param userNo - Whether the user has a "no" position in the market.
+ * @param id - The unique identifier of the market.
+ * @param imageHash - The IPFS hash of the market's image.
+ * @param totalYes - The total amount of "yes" positions in the market.
+ * @param totalNo - The total amount of "no" positions in the market.
+ * @param totalAmount - The total amount of the market.
+ * @param hasResolved - Whether the market has been resolved.
+ * @param timestamp - The timestamp of when the user's position was added.
+ * @param endTimestamp - The timestamp of when the market will end.
+ */
 import moment from "moment";
 import Img from "next/image";
 import React from "react";

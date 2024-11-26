@@ -1,3 +1,15 @@
+/**
+ * Provides a React context for managing data related to Web3, Polymarket, and PolyToken.
+ *
+ * The `DataProvider` component wraps the application and provides the following data:
+ * - `account`: The Ethereum account connected to the application.
+ * - `loading`: A boolean indicating whether the data is still being loaded.
+ * - `loadWeb3`: A function that initializes the Web3 connection and loads the Polymarket and PolyToken contracts.
+ * - `polymarket`: The Polymarket contract instance.
+ * - `polyToken`: The PolyToken contract instance.
+ *
+ * The `useData` hook can be used to access the data provided by the `DataProvider`.
+ */
 declare let window: any;
 import { createContext, useContext, useState } from "react";
 import Web3 from "web3";

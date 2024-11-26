@@ -1,3 +1,12 @@
+/**
+ * The `Admin` component is a React component that provides an administrative interface for creating new markets on the Polymarket platform.
+ * 
+ * The component fetches the user's Ethereum account and the Polymarket contract instance from the `DataContext`, and allows the user to input the details of a new market, including the title, description, image, resolver URL, and end date.
+ * 
+ * When the user submits the form, the component calls the `createQuestion` method on the Polymarket contract to create a new market, and then redirects the user to the home page.
+ * 
+ * The component also includes a link to the "See All Markets" page, which allows the user to view all the markets that have been created.
+ */
 import { create } from "ipfs-http-client";
 import Head from "next/head";
 import Link from "next/link";

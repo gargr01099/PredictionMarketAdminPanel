@@ -4,6 +4,18 @@ import React from "react";
 import Web3 from "web3";
 import { MarketProps } from "../pages";
 
+/**
+ * Renders a card component for a market item, displaying its title, image, volume, and yes/no vote amounts.
+ * The card is wrapped in a Link component to navigate to the individual market page when clicked.
+ *
+ * @param id - The unique identifier for the market item.
+ * @param title - The title of the market item.
+ * @param totalAmount - The total amount of POLY tokens in the market.
+ * @param totalYes - The total amount of POLY tokens voted "yes" for the market.
+ * @param totalNo - The total amount of POLY tokens voted "no" for the market.
+ * @param imageHash - The IPFS hash of the market item's image.
+ * @returns A React component that renders the market card.
+ */
 export const MarketCard: React.FC<MarketProps> = ({
   id,
   title,

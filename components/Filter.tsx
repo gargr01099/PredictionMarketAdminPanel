@@ -1,3 +1,13 @@
+/**
+ * A React component that renders a dropdown filter with a list of options.
+ *
+ * @param props - The component props:
+ * @param props.list - An array of strings representing the list of options to display in the dropdown.
+ * @param props.activeItem - The currently selected item from the list.
+ * @param props.category - The category label to display in the dropdown.
+ * @param props.onChange - A function to call when the user selects a new item from the list.
+ * @returns A React component that renders the dropdown filter.
+ */
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import { Fragment } from "react";
