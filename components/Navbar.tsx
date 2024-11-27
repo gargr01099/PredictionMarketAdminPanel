@@ -1,14 +1,8 @@
-/**
- * Renders the main navigation bar for the application.
- * The navbar includes links to the market and portfolio pages, as well as a button to connect the user's Ethereum wallet.
- */
-// function Navbar() {
-//   // ...
-// }
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { useData } from "../contexts/DataContext";
+import MarketList from "./MarketList";
 
 function Navbar() {
   const router = useRouter();
@@ -19,9 +13,7 @@ function Navbar() {
       <nav className="w-full h-16 mt-auto max-w-5xl">
         <div className="flex flex-row justify-between items-center h-full">
           <Link href="/" passHref>
-            <span className="font-semibold text-xl cursor-pointer">
-              Polymarket
-            </span>
+            <span className="font-semibold text-xl cursor-pointer">Soren</span>
           </Link>
           {!router.asPath.includes("/market") &&
             !router.asPath.includes("/admin") && (
@@ -35,6 +27,11 @@ function Navbar() {
                   title="Portfolio"
                   isActive={router.asPath === "/portfolio"}
                   url={"/portfolio"}
+                />
+                <TabButton
+                  title="Create Market"
+                  isActive={router.asPath === "/create-market"}
+                  url={"/create-market"}
                 />
               </div>
             )}
@@ -51,11 +48,13 @@ function Navbar() {
                 loadWeb3();
               }}
             >
-              <span className="text-lg text-white">Connect</span>
+              <span className="text-lg text-white">Connecttt</span>
             </div>
           )}
         </div>
       </nav>
+
+      {router.asPath === "/"}
     </>
   );
 }
