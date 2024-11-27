@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 import { useData } from "../contexts/DataContext";
 import styles from "../styles/Home.module.css";
 import MarketList from "../components/MarketList";
-
+import { createMarket } from "./create-market";
 export interface MarketProps {
   id: string;
   title: string;
@@ -21,6 +21,8 @@ export default function Home() {
   const [markets, setMarkets] = useState<MarketProps[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredMarkets, setFilteredMarkets] = useState<MarketProps[]>([]);
+  const [isCreatingMarket, setIsCreatingMarket] = useState(false);
+  const [newMarketTitle, setNewMarketTitle] = useState("");
 
   const getMarkets = useCallback(async () => {
     var totalQuestions = await polymarket.methods
@@ -54,6 +56,26 @@ export default function Home() {
       if (!loading) getMarkets();
     });
   }, [loading]);
+
+  const handleCreateMarket = async () => {
+    if (newMarketTitle.trim() === "") {
+      alert("Market title cannot be empty");
+      return;
+    }
+
+    setIsCreatingMarket(true);
+    try {
+      const marketCreated = await createMarket(polymarket, account, newMarketTitle);
+      if (marketCreated) {
+        setNewMarketTitle(""); // Clear the input
+        getMarkets(); // Reload the markets after creating a new one
+      }
+    } catch (error) {
+      console.error("Error creating market", error);
+    } finally {
+      setIsCreatingMarket(false);
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -103,9 +125,8 @@ export default function Home() {
               onChange={() => {}}
             />
           </div>
-          <span className="font-bold my-3 text-lg">Market</span>
-          <div className="flex flex-wrap overflow-hidden sm:-mx-1 md:-mx-2">
-            {markets.map((market) => {
+          <div className="flex flex-wrap overflow-hidden sm:-mx-1 md:-mx-2 mt-4">
+            {filteredMarkets.map((market) => {
               return (
                 <MarketCard
                   id={market.id}
@@ -120,8 +141,7 @@ export default function Home() {
             })}
           </div>
           <div className="mt-6">
-            <h2 className="text-xl font-bold mb-4">Market List</h2>
-            <MarketList searchQuery={""} />
+            <MarketList searchQuery={searchQuery} />
           </div>
         </div>
       </main>

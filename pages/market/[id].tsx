@@ -138,7 +138,7 @@ const Details = () => {
                       market?.totalAmount.toString() ?? "0",
                       "ether"
                     ) ?? 0}{" "}
-                    POLY
+                    SOREN
                   </span>
                 </div>
               </div>
@@ -199,7 +199,7 @@ const Details = () => {
                         autoComplete="off"
                       />
                       <span className="whitespace-nowrap text-sm font-semibold">
-                        POLY |{" "}
+                        SOREN |{" "}
                       </span>
                       <span className="text-sm font-semibold text-blue-700 mx-2 underline cursor-pointer">
                         Max
