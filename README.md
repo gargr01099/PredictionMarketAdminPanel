@@ -17,12 +17,12 @@
 </p>
 
 <p align="center">
-  <h1 align="center">Polymarket Clone</h1>
+  <h1 align="center">Soren</h1>
 </p>
 
 ## About The Project
 
-Polymarket is a decentralized information market, harnessing the power of free markets to demystify the real-world events that matter most.
+Soren is a decentralized information market, harnessing the power of free markets to demystify the real-world events that matter most.
 
 ## Tech stack and libraries
  - Solidity
