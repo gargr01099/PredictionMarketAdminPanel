@@ -1,3 +1,16 @@
+/**
+ * Renders a navigation bar component for the application.
+ * 
+ * The Navbar includes a link to the homepage, conditional tab buttons for navigation,
+ * and displays the user's account information if connected. If the user is not connected,
+ * it provides an option to connect to Web3. Additionally, it includes a Login/SignUp button.
+ * 
+ * Utilizes the `useRouter` hook to determine the current path and conditionally render
+ * navigation tabs. The `useData` hook is used to access account information and a function
+ * to initiate Web3 connection.
+ * 
+ * @component
+ */
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useData } from "../contexts/DataContext";
@@ -20,16 +33,16 @@ function Navbar() {
                 isActive={router.asPath === "/"}
                 url={"/"}
               />
-              <TabButton
+              {/* <TabButton
                 title="Portfolio"
                 isActive={router.asPath === "/portfolio"}
                 url={"/portfolio"}
-              />
-              <TabButton
+              /> */}
+              {/* <TabButton
                 title="Create Market"
                 isActive={router.asPath === "/create-market"}
                 url={"/create-market"}
-              />
+              /> */}
             </div>
           )}
         {account ? (
@@ -48,6 +61,11 @@ function Navbar() {
             <span className="text-lg text-white">Connect</span>
           </div>
         )}
+          <div className="bg-blue-500 px-6 py-2 rounded-md cursor-pointer">
+            <span className="text-lg text-white">
+              Login/SignUp
+            </span>
+          </div>
       </div>
     </nav>
   );

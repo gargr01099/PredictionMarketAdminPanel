@@ -1,3 +1,17 @@
+/**
+ * ChartContainer is a React functional component that renders a Plotly chart
+ * displaying YES/NO data fetched from a blockchain using Web3. It utilizes
+ * the `useData` context to access the `polymarket` contract and retrieves
+ * graph data based on the provided `questionId` prop. The data is processed
+ * to accumulate amounts over time for both "Yes" and "No" responses, and
+ * plotted using Plotly with a line and marker chart.
+ *
+ * @param {Props} props - The properties object.
+ * @param {string} props.questionId - The ID of the question for which to fetch
+ * graph data.
+ *
+ * @returns {JSX.Element} A div element containing the Plotly chart.
+ */
 import Plotly from "plotly.js-dist-min";
 import React, { useEffect } from "react";
 import Web3 from "web3";

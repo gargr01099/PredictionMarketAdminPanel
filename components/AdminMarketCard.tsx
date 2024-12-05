@@ -1,3 +1,16 @@
+/**
+ * AdminMarketCard is a React functional component that displays a market card
+ * with information about a specific market, including its title, total liquidity,
+ * and an image. It also provides buttons to resolve the market with a "YES" or "NO"
+ * outcome.
+ *
+ * Props:
+ * - title: The title of the market.
+ * - totalAmount: The total liquidity amount in Wei, which is converted to Ether and displayed.
+ * - onYes: Callback function to be executed when the "Resolve YES" button is clicked.
+ * - onNo: Callback function to be executed when the "Resolve NO" button is clicked.
+ * - imageHash: The IPFS hash of the image to be displayed.
+ */
 import Img from "next/image";
 import React from "react";
 import Web3 from "web3";
